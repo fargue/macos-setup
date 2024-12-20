@@ -1,0 +1,3 @@
+# parameter is db-name. ie: kms-beta
+
+aws rds describe-events --source-type db-instance --duration 14400 --source-identifier $1 | jq '.Events[] | .Date + " " + .Message'
