@@ -29,6 +29,10 @@ mkdir -p $HOME/project/personal
 cd $HOME/project/personal
 git clone https://github.com/fargue/macos-setup.git
 # use fargue/[new pat]
+
+mkdir ~/bin
+ln -s HOME/project/personal/macos-setup/bin/mac-netstat ~/bin
+ln -s HOME/project/personal/macos-setup/bin/rds-events ~/bin
 ```
 
 
@@ -110,6 +114,7 @@ brew install \
     fzf \
     git \
     helm \
+    java \
     jenv \
     jq \
     kubernetes-cli \
@@ -145,7 +150,7 @@ pyenv global 3.13.1
 pip install aws-mfa
 ```
 
-## SEtup AWS cli
+## Setup AWS cli
 
 ```
 mkdir ~/.aws
@@ -186,3 +191,44 @@ bin/reset-rancher.sh
 bin/reset-rancher.sh
 ```
 
+## SQLCi
+
+[Download Link](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/)
+
+```
+mkdir ~/software
+mv ~/Downloads/sqlcl* ~/software
+cd ~/software
+unzip sqlcl-*.zip
+ln -sf ~/software/sqlcl/bin/sql ~/bin/sql
+ln -sf ~/software/sqlcl/bin/sql ~/bin/sqlplus
+```
+
+## KubeContexts
+
+```
+aws eks --region us-east-1 \
+    update-kubeconfig --name staging-blue \
+    --alias staging-blue.us-east-1 \
+    --role-arn arn:aws:iam::434875166128:role/MstsDevopsEKSClusterAdmin
+
+aws eks --region us-east-1 \
+    update-kubeconfig --name staging-green \
+    --alias staging-green.us-east-1 \
+    --role-arn arn:aws:iam::434875166128:role/MstsDevopsEKSClusterAdmin
+
+aws eks --region us-east-1 \
+    update-kubeconfig --name production-green \
+    --alias production-green.us-east-1 \
+    --role-arn arn:aws:iam::434875166128:role/MstsDevopsEKSClusterAdmin
+
+aws eks --region eu-west-1 \
+    update-kubeconfig --name production-green \
+    --alias production-green.eu-west-1 \
+    --role-arn arn:aws:iam::434875166128:role/MstsDevopsEKSClusterAdmin
+
+aws eks --profile=MSTS-Core-Services-CDE-Admin --region us-east-1 \
+    update-kubeconfig --name cde-green \
+    --alias cde-green.us-east-1 \
+    --role-arn arn:aws:iam::612430976833:role/MstsDevopsEKSClusterAdmin
+```
