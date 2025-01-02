@@ -109,6 +109,8 @@ ln -sf $HOME/project/personal/macos-setup/zsh-alias ${ZSH_CUSTOM}/aliases.zsh
 brew install \
     awscli \
     aws-iam-authenticator \
+    clocker \
+    flycut \
     docker-credential-helper-ecr \
     eksctl \
     fzf \
@@ -129,6 +131,10 @@ brew install \
 
 brew install --cask dbeaver-community flux macdown notunes
 ```
+
+## Clocker
+
+Run clocker app to add timezones
 
 ## Pyenv
 
@@ -232,3 +238,9 @@ aws eks --profile=MSTS-Core-Services-CDE-Admin --region us-east-1 \
     --alias cde-green.us-east-1 \
     --role-arn arn:aws:iam::612430976833:role/MstsDevopsEKSClusterAdmin
 ```
+
+## Other Mac Software
+
+* [Rectangle](https://rectangleapp.com/)
+* [Lens](https://k8slens.dev/)
+
