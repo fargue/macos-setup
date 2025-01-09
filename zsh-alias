@@ -1,1 +1,7 @@
 alias ph="cd ${PROJECT_HOME}"
+
+alias wlp="watch -n 2 'kubectl get pods --context=rancher-desktop --all-namespaces | grep -v "kube-system" | grep -v compose- | grep -v cattle | grep -v cert-manager '"
+alias wlpw="watch -n 2 'kubectl get pods --context=rancher-desktop --all-namespaces -o wide | grep -v "kube-system" | grep -v compose-'"
+
+# condense docker ps output
+alias dps="echo 'Running Docker containers(minus k8s_):'; docker ps --format \"{{.ID}}: {{.Names}} {{.Status}}\" | grep -v 'k8s_'; kubectl get pods --all-namespaces" 
