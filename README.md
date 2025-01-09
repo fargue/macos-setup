@@ -48,7 +48,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 curl -sS https://starship.rs/install.sh | sh
 
-
 ln -s $HOME/project/personal/macos-setup/zsh-environment-variables.mac-001 ~/.local-environment-variables
 
 ln -s $HOME/project/personal/macos-setup/starship.toml ~/.config/starship.toml
@@ -201,6 +200,8 @@ bin/reset-rancher.sh
 ```
 
 ## SQLCi
+
+Install this if you want local SQLPlus
 
 [Download Link](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/)
 
