@@ -110,8 +110,6 @@ brew install \
     awscli \
     aws-iam-authenticator \
     clocker \
-    flycut \
-    docker-credential-helper-ecr \
     eksctl \
     fzf \
     git \
@@ -119,7 +117,7 @@ brew install \
     java \
     jenv \
     jq \
-    kubernetes-cli \
+    maccy \
     pluto \
     rbenv \
     readline \
@@ -127,7 +125,8 @@ brew install \
     tfenv \
     watch \
     wget \
-    xz
+    xz \
+    yq
 
 brew install --cask dbeaver-community flux macdown notunes
 ```
@@ -135,6 +134,10 @@ brew install --cask dbeaver-community flux macdown notunes
 ## Clocker
 
 Run clocker app to add timezones
+
+## Maccy
+
+This is clipboard manager. Change to autostart
 
 ## Pyenv
 
@@ -190,7 +193,7 @@ bin/reset-rancher.sh
 # 
 # Error: /Applications/Rancher Desktop.app/Contents/Resources/resources/darwin/lima/bin/limactl.ventura exited with code 1
 
-# To into your Preferences and set the Virtual Machine -> Emulation from QEMU to VZ then restart.
+# Go into your Preferences and set the Virtual Machine -> Emulation from QEMU to VZ then restart.
 
 
 # Once Rancher is up and running:
