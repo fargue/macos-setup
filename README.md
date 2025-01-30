@@ -127,7 +127,7 @@ brew install \
     xz \
     yq
 
-brew install --cask dbeaver-community flux macdown notunes
+brew install --cask dbeaver-community itsycal flux macdown notunes
 ```
 
 ## Clocker
@@ -247,4 +247,5 @@ aws eks --profile=MSTS-Core-Services-CDE-Admin --region us-east-1 \
 
 * [Rectangle](https://rectangleapp.com/)
 * [Lens](https://k8slens.dev/)
+* [MacVim](https://macvim.org/)
 
