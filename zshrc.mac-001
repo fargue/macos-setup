@@ -73,6 +73,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    aws
     git
     kubectl
     zsh-autosuggestions
@@ -124,6 +125,34 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
+# Flux
+command -v flux >/dev/null && . <(flux completion zsh)
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+# fix sqlcl java warning: https://forums.oracle.com/ords/apexds/post/sqlcl-release-25-1-jre-24-warning-a-restricted-method-in-ja-9589
+export JAVA_TOOL_OPTIONS=--enable-native-access=ALL-UNNAMED
+
+# rbenv\
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# cpanminus
+export PERL_CPANM_OPT="--local-lib $HOME/perl --cpanmetadb https://repo.multiservice.com/metacpan --mirror https://repo.multiservice.com/cpan --mirror http://cpan.metacpan.org --cascade-search"
+
+PATH="/Users/jrarnold/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/jrarnold/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/jrarnold/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/jrarnold/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/jrarnold/perl5"; export PERL_MM_OPT;
+
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/jrarnold/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+export AWS_CA_BUNDLE="/Library/Application Support/Netskope/nscacert_combined.pem"
+export NODE_EXTRA_CA_CERTS="/Library/Application Support/Netskope/nscacert_combined.pem"
+export CURL_CA_BUNDLE="/Library/Application Support/Netskope/nscacert_combined.pem"
+export REQUESTS_CA_BUNDLE="/Library/Application Support/Netskope/nscacert_combined.pem"
+export SSL_CERT_FILE="/Library/Application Support/Netskope/nscacert_combined.pem"
+export GIT_SSL_CAPATH="/Library/Application Support/Netskope/nscacert_combined.pem"

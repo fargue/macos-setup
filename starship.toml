@@ -14,18 +14,21 @@ command_timeout = 1000
 # newline between commands
 add_newline = true
 
-# ! opt-in for individual modules (e.g., aws, docker, gcloud, nodejs, python)
-# standalone format to get os glyph on ps1 line,
-# prompt character below
-format = """
-$os$username$hostname:$directory$git_branch$git_status$git_commit$python$cmd_duration
-$character
+# Control order
+format="""
+$hostname$directory$git_branch$git_status$custom$all
 """
 
-# Replace the "❯"
 [character]
 success_symbol = "[-❯](green)"
-error_symbol = "[-❯](red)"
+error_symbol = "[-DOH!-❯](red)"
+
+[custom.rancher]
+command = 'rdctl api /v1/settings | jq -r .containerEngine.name'
+format = '\(#[$output]($style)\) '
+when = true
+style = 'bold yellow'
+description = 'Rancher Container Engine (custom)'
 
 [username]
 style_user = "green bold"
@@ -72,13 +75,17 @@ format = '[$duration](bold yellow)'
 python_binary = ["./venv/bin/python", "python3", "python", "python2"]
 
 [aws]
-disabled = true
-
-[docker_context]
-disabled = true
-
-[gcloud]
-disabled = true
-
-[nodejs]
-disabled = true
+format = '\(AWS:[($profile )({$region})]($style)\) '
+style = 'bold blue'
+[aws.region_aliases]
+ap-southeast-2 = 'AU'
+us-east-1 = 'VA'
+us-east-2 = 'OH'
+eu-west-1 = 'Ire'
+[aws.profile_aliases]
+Administrator_FullAccess-434875166128 = 'Main-Full'
+Administrator_Readonly-434875166128 = 'Main-RO'
+Administrator_FullAccess-612430976833 = 'CDE-Full'
+Administrator_Readonly-612430976833 = 'CDE-RO'
+Administrator_FullAccess-567795905116 = 'Token-Full'
+Administrator_Readonly-567795905116 = 'Token-Full'

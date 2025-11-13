@@ -127,7 +127,8 @@ brew install \
     xz \
     yq
 
-brew install --cask dbeaver-community itsycal flux macdown notunes
+brew install --cask dbeaver-community itsycal macdown notunes
+brew install fluxcd/tap/flux
 ```
 
 ## Clocker
