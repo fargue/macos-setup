@@ -6,13 +6,13 @@
 
 ## Xcode
 
-```
+```sh
 xcode-select --install
 ```
 
 ## Install brew
 
-```
+```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
@@ -24,7 +24,7 @@ xcode-select --install
 
 Setup PAT in github via User -> Settings -> DeveloperSettings (at the bottom)
 
-```
+```sh
 mkdir -p $HOME/project/personal
 cd $HOME/project/personal
 git clone https://github.com/fargue/macos-setup.git
@@ -35,10 +35,9 @@ ln -s HOME/project/personal/macos-setup/bin/mac-netstat ~/bin
 ln -s HOME/project/personal/macos-setup/bin/rds-events ~/bin
 ```
 
-
 ## Install zsh and starship
 
-```
+```sh
 brew install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -61,7 +60,7 @@ source ~/.zshrc
 
 ## setup git
 
-```
+```sh
 git config --global user.name "Jerry Arnold"
 git config --global user.email "jrarnold@trevipay.com"
 git config --global core.editor vim
@@ -70,17 +69,15 @@ git config --global core.ui true
 
 ## Starship
 
-```
+```sh
 curl -sS https://starship.rs/install.sh | sh
-
 ```
 
 [config](https://starship.rs/config/)
 
-
 ## Joplin
 
-```
+```sh
 brew install joplin
 ```
 
@@ -90,7 +87,7 @@ Sync with DropBox via jerryarn@gmail.com login
 
 [Reference](https://phoenixnap.com/kb/generate-setup-ssh-key-ubuntu)
 
-```
+```sh
 mkdir -p $HOME/.ssh
 chmod 0700 $HOME/.ssh
 ssh-keygen
@@ -104,7 +101,7 @@ ln -sf $HOME/project/personal/macos-setup/zsh-alias ${ZSH_CUSTOM}/aliases.zsh
 
 ## Brew prereqs
 
-```
+```sh
 brew install \
     awscli \
     aws-iam-authenticator \
@@ -141,7 +138,7 @@ This is clipboard manager. Change to autostart
 
 ## Pyenv
 
-```
+```sh
 brew install pyenv
 ```
 
@@ -167,7 +164,7 @@ chmod 700 ~/.aws
 echo "[default-long-term]" > ~/.aws/credentials
 echo "aws_access_key_id = AKIAWXXXXXXX" >> ~/.aws/credentials
 echo "aws_secret_access_key = XXXXXXXXX" >> ~/.aws/credentials
-echo "aws_mfa_device = arn:aws:iam::434875166128:mfa/jrarnold@multiservice.com" >> ~/.aws/credentials
+echo "aws_mfa_device = {MFA_ARN}" >> ~/.aws/credentials
  
 chmod 600 ~/.aws/credentials
 ```
@@ -221,27 +218,27 @@ ln -sf ~/software/sqlcl/bin/sql ~/bin/sqlplus
 aws eks --region us-east-1 \
     update-kubeconfig --name staging-blue \
     --alias staging-blue.us-east-1 \
-    --role-arn arn:aws:iam::434875166128:role/MstsDevopsEKSClusterAdmin
+    --role-arn {ARN_PATH}:role/MstsDevopsEKSClusterAdmin
 
 aws eks --region us-east-1 \
     update-kubeconfig --name staging-green \
     --alias staging-green.us-east-1 \
-    --role-arn arn:aws:iam::434875166128:role/MstsDevopsEKSClusterAdmin
+    --role-arn {ARN_PATH}:role/MstsDevopsEKSClusterAdmin
 
 aws eks --region us-east-1 \
     update-kubeconfig --name production-green \
     --alias production-green.us-east-1 \
-    --role-arn arn:aws:iam::434875166128:role/MstsDevopsEKSClusterAdmin
+    --role-arn {ARN_PATH}:role/MstsDevopsEKSClusterAdmin
 
 aws eks --region eu-west-1 \
     update-kubeconfig --name production-green \
     --alias production-green.eu-west-1 \
-    --role-arn arn:aws:iam::434875166128:role/MstsDevopsEKSClusterAdmin
+    --role-arn {ARN_PATH}:role/MstsDevopsEKSClusterAdmin
 
 aws eks --profile=MSTS-Core-Services-CDE-Admin --region us-east-1 \
     update-kubeconfig --name cde-green \
     --alias cde-green.us-east-1 \
-    --role-arn arn:aws:iam::612430976833:role/MstsDevopsEKSClusterAdmin
+    --role-arn {ARN_PATH}:role/MstsDevopsEKSClusterAdmin
 ```
 
 ## Other Mac Software
