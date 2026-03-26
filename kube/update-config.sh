@@ -1,0 +1,5 @@
+aws eks --profile=Administrator_FullAccess-434875166128 --region us-east-1 update-kubeconfig --name staging-blue --alias staging-blue.us-east-1 --role-arn arn:aws:iam::434875166128:role/MstsDevopsEKSClusterAdmin
+aws eks --profile=Administrator_FullAccess-434875166128 --region us-east-1 update-kubeconfig --name staging-green --alias staging-green.us-east-1 --role-arn arn:aws:iam::434875166128:role/MstsDevopsEKSClusterAdmin
+aws eks --profile=Administrator_FullAccess-434875166128 --region us-east-1 update-kubeconfig --name production-green --alias production-green.us-east-1 --role-arn arn:aws:iam::434875166128:role/MstsDevopsEKSClusterAdmin
+aws eks --profile=Administrator_FullAccess-434875166128 --region eu-west-1 update-kubeconfig --name production-green --alias production-green.eu-west-1 --role-arn arn:aws:iam::434875166128:role/MstsDevopsEKSClusterAdmin
+aws eks --profile=Administrator_FullAccess-612430976833 --region us-east-1 update-kubeconfig --name cde-green --alias cde-green.us-east-1 --role-arn arn:aws:iam::612430976833:role/MstsDevopsEKSClusterAdmin

@@ -81,7 +81,7 @@ curl -sS https://starship.rs/install.sh | sh
 brew install joplin
 ```
 
-Sync with DropBox via jerryarn@gmail.com login
+Sync with [joplin.fargue.net](https://joplin.fargue.net) via jerryarn@gmail.com login
 
 ## Setup Keys
 
@@ -124,7 +124,7 @@ brew install \
     xz \
     yq
 
-brew install --cask dbeaver-community itsycal macdown notunes
+brew install --cask dbeaver-community itsycal macdown notunes keepassxc bruno
 brew install fluxcd/tap/flux
 ```
 
@@ -214,31 +214,10 @@ ln -sf ~/software/sqlcl/bin/sql ~/bin/sqlplus
 
 ## KubeContexts
 
-```
-aws eks --region us-east-1 \
-    update-kubeconfig --name staging-blue \
-    --alias staging-blue.us-east-1 \
-    --role-arn {ARN_PATH}:role/MstsDevopsEKSClusterAdmin
-
-aws eks --region us-east-1 \
-    update-kubeconfig --name staging-green \
-    --alias staging-green.us-east-1 \
-    --role-arn {ARN_PATH}:role/MstsDevopsEKSClusterAdmin
-
-aws eks --region us-east-1 \
-    update-kubeconfig --name production-green \
-    --alias production-green.us-east-1 \
-    --role-arn {ARN_PATH}:role/MstsDevopsEKSClusterAdmin
-
-aws eks --region eu-west-1 \
-    update-kubeconfig --name production-green \
-    --alias production-green.eu-west-1 \
-    --role-arn {ARN_PATH}:role/MstsDevopsEKSClusterAdmin
-
-aws eks --profile=MSTS-Core-Services-CDE-Admin --region us-east-1 \
-    update-kubeconfig --name cde-green \
-    --alias cde-green.us-east-1 \
-    --role-arn {ARN_PATH}:role/MstsDevopsEKSClusterAdmin
+```sh
+cd ~/.kube
+ln -s ~/project/personal/macos-setup/kube/update-config.sh .
+./update-config.sh
 ```
 
 ## Other Mac Software
@@ -246,4 +225,7 @@ aws eks --profile=MSTS-Core-Services-CDE-Admin --region us-east-1 \
 * [Rectangle](https://rectangleapp.com/)
 * [Lens](https://k8slens.dev/)
 * [MacVim](https://macvim.org/)
+* [Oxygen XML Editor]()
+* [Bruno]()
+* [DBeaver]()
 

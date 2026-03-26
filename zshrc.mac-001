@@ -150,9 +150,9 @@ PERL_MM_OPT="INSTALL_BASE=/Users/jrarnold/perl5"; export PERL_MM_OPT;
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/jrarnold/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-export AWS_CA_BUNDLE="/Library/Application Support/Netskope/nscacert_combined.pem"
-export NODE_EXTRA_CA_CERTS="/Library/Application Support/Netskope/nscacert_combined.pem"
-export CURL_CA_BUNDLE="/Library/Application Support/Netskope/nscacert_combined.pem"
-export REQUESTS_CA_BUNDLE="/Library/Application Support/Netskope/nscacert_combined.pem"
-export SSL_CERT_FILE="/Library/Application Support/Netskope/nscacert_combined.pem"
-export GIT_SSL_CAPATH="/Library/Application Support/Netskope/nscacert_combined.pem"
+export AWS_CA_BUNDLE="${HOME}/os-ca-bundle.pem"
+export NODE_EXTRA_CA_CERTS="${HOME}/os-ca-bundle.pem"
+export CURL_CA_BUNDLE="${HOME}/os-ca-bundle.pem"
+export REQUESTS_CA_BUNDLE="${HOME}/os-ca-bundle.pem"
+export SSL_CERT_FILE="${HOME}/os-ca-bundle.pem"
+export GIT_SSL_CAPATH="${HOME}/os-ca-bundle.pem"
