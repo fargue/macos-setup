@@ -128,9 +128,6 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # Flux
 command -v flux >/dev/null && . <(flux completion zsh)
 
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
 # fix sqlcl java warning: https://forums.oracle.com/ords/apexds/post/sqlcl-release-25-1-jre-24-warning-a-restricted-method-in-ja-9589
 export JAVA_TOOL_OPTIONS=--enable-native-access=ALL-UNNAMED
 
@@ -156,3 +153,6 @@ export CURL_CA_BUNDLE="${HOME}/os-ca-bundle.pem"
 export REQUESTS_CA_BUNDLE="${HOME}/os-ca-bundle.pem"
 export SSL_CERT_FILE="${HOME}/os-ca-bundle.pem"
 export GIT_SSL_CAPATH="${HOME}/os-ca-bundle.pem"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)

@@ -29,10 +29,6 @@ mkdir -p $HOME/project/personal
 cd $HOME/project/personal
 git clone https://github.com/fargue/macos-setup.git
 # use fargue/[new pat]
-
-mkdir ~/bin
-ln -s HOME/project/personal/macos-setup/bin/mac-netstat ~/bin
-ln -s HOME/project/personal/macos-setup/bin/rds-events ~/bin
 ```
 
 ## Install zsh and starship
@@ -136,6 +132,13 @@ Run clocker app to add timezones
 
 This is clipboard manager. Change to autostart
 
+## Fzf
+
+```sh
+$(brew --prefix)/opt/fzf/install
+
+```
+
 ## Pyenv
 
 ```sh
@@ -144,7 +147,7 @@ brew install pyenv
 
 ### Install some versions
 
-```
+```sh
 pyenv install --list
 pyenv install 3.13.1
 pyenv global 3.13.1
@@ -152,13 +155,13 @@ pyenv global 3.13.1
 
 ## Pip installs
 
-```
+```sh
 pip install aws-mfa
 ```
 
 ## Setup AWS cli
 
-```
+```sh
 mkdir ~/.aws
 chmod 700 ~/.aws
 echo "[default-long-term]" > ~/.aws/credentials
@@ -171,7 +174,7 @@ chmod 600 ~/.aws/credentials
 
 ## Rancher Desktop
 
-```
+```sh
 mkdir -p $HOME/project/msts/devops/
 cd $HOME/project/msts/devops
 git clone https://gitlab.com/msts-enterprise/devops/local-development.git
@@ -203,7 +206,7 @@ Install this if you want local SQLPlus
 
 [Download Link](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/)
 
-```
+```sh
 mkdir ~/software
 mv ~/Downloads/sqlcl* ~/software
 cd ~/software
@@ -229,3 +232,18 @@ ln -s ~/project/personal/macos-setup/kube/update-config.sh .
 * [Bruno]()
 * [DBeaver]()
 
+## Bin Links
+
+```sh
+mkdir ~/bin
+ln -sf $HOME/project/msts/Utilities/bin/mac-netstat ~/bin
+ln -sf $HOME/project/msts/Utilities/bin/rds-events ~/bin
+ln -sf $HOME/project/msts/Utilities/bin/gitdmb ~/bin
+ln -sf $HOME/project/msts/Utilities/bin/gitlab-runner-info.sh ~/bin
+ln -sf $HOME/project/msts/Utilities/bin/local-db-nuclear-option.sh ~/bin
+ln -sf $HOME/project/msts/Utilities/bin/rancher-status ~/bin
+ln -sf $HOME/project/msts/devops/local-development/bin/reset-rancher.sh ~/bin
+ln -sf $HOME/project/msts/devops/base-images/oracle-mercury-database/run-local-db.sh ~/bin
+ln -sf $HOME/software/sqlcl/bin/sql ~/bin
+ln -sf $HOME/software/sqlcl/bin/sql ~/bin/sqlplus
+```
