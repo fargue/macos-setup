@@ -77,7 +77,7 @@ curl -sS https://starship.rs/install.sh | sh
 brew install joplin
 ```
 
-Sync with [joplin.fargue.net](https://joplin.fargue.net) via jerryarn@gmail.com login
+Sync with [joplin.fargue.net](https://joplin.fargue.net) via <jerryarn@gmail.com> login
 
 ## Setup Keys
 
@@ -115,6 +115,7 @@ brew install \
     readline \
     stern \
     tfenv \
+    thefuck \
     watch \
     wget \
     xz \
