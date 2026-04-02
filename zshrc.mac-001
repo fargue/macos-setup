@@ -74,8 +74,10 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     aws
+    docker
     git
     kubectl
+    thefuck
     zsh-autosuggestions
     zsh-syntax-highlighting
     )
@@ -110,7 +112,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+alias ab="echo use bombardier"
 
 # pyenv setup
 export PYENV_ROOT="$HOME/.pyenv"
@@ -128,6 +130,9 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # Flux
 command -v flux >/dev/null && . <(flux completion zsh)
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # fix sqlcl java warning: https://forums.oracle.com/ords/apexds/post/sqlcl-release-25-1-jre-24-warning-a-restricted-method-in-ja-9589
 export JAVA_TOOL_OPTIONS=--enable-native-access=ALL-UNNAMED
 
@@ -144,15 +149,13 @@ PERL_LOCAL_LIB_ROOT="/Users/jrarnold/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_L
 PERL_MB_OPT="--install_base \"/Users/jrarnold/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/jrarnold/perl5"; export PERL_MM_OPT;
 
+export AWS_CA_BUNDLE="/Library/Application Support/Netskope/nscacert_combined.pem"
+export NODE_EXTRA_CA_CERTS="/Library/Application Support/Netskope/nscacert_combined.pem"
+export CURL_CA_BUNDLE="/Library/Application Support/Netskope/nscacert_combined.pem"
+export REQUESTS_CA_BUNDLE="/Library/Application Support/Netskope/nscacert_combined.pem"
+export SSL_CERT_FILE="/Library/Application Support/Netskope/nscacert_combined.pem"
+export GIT_SSL_CAPATH="/Library/Application Support/Netskope/nscacert_combined.pem"
+
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/jrarnold/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-export AWS_CA_BUNDLE="${HOME}/os-ca-bundle.pem"
-export NODE_EXTRA_CA_CERTS="${HOME}/os-ca-bundle.pem"
-export CURL_CA_BUNDLE="${HOME}/os-ca-bundle.pem"
-export REQUESTS_CA_BUNDLE="${HOME}/os-ca-bundle.pem"
-export SSL_CERT_FILE="${HOME}/os-ca-bundle.pem"
-export GIT_SSL_CAPATH="${HOME}/os-ca-bundle.pem"
-
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
