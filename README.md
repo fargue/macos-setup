@@ -1,5 +1,7 @@
 # macos-setup
 
+This is my own personal setup.  Use as a reference only.
+
 ## Display Link Drivers if you need them
 
 [Download link](https://www.synaptics.com/products/displaylink-graphics/downloads)
@@ -58,7 +60,7 @@ source ~/.zshrc
 
 ```sh
 git config --global user.name "Jerry Arnold"
-git config --global user.email "jrarnold@trevipay.com"
+git config --global user.email "{EMAIL_ADDRESS}
 git config --global core.editor vim
 git config --global core.ui true
 ```
