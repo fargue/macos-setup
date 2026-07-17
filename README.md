@@ -63,6 +63,7 @@ git config --global user.name "Jerry Arnold"
 git config --global user.email "{EMAIL_ADDRESS}
 git config --global core.editor vim
 git config --global core.ui true
+git config --global url."https://gitlab.com/".insteadof "git@gitlab.com"
 ```
 
 ## Starship
