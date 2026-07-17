@@ -1,6 +1,6 @@
 # macos-setup
 
-This is my own personal setup.  Use as a reference only.
+This is my own personal setup.  Use as a reference only. Comes with no warranty!
 
 ## Display Link Drivers if you need them
 
