@@ -260,3 +260,15 @@ ln -sf $HOME/project/msts/devops/base-images/oracle-mercury-database/run-local-d
 ln -sf $HOME/software/sqlcl/bin/sql ~/bin
 ln -sf $HOME/software/sqlcl/bin/sql ~/bin/sqlplus
 ```
+## Setup ~/.secrets file
+
+File that get's loaded via shell to store used api keys, etc
+
+```sh
+# Gitlab - Key Name: Local Mac
+export GITLAB_TOKEN=glpat-XXXXXXXXXXXXX
+# Cursor
+export CURSOR_API_KEY=key_XXXXXXXXXXX
+# Opsgenie
+export OPSGENIE_API_KEY=XXXXXXXXXXXXXXXXXXXXX
+```
