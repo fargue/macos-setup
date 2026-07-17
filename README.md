@@ -102,29 +102,38 @@ ln -sf $HOME/project/personal/macos-setup/zsh-alias ${ZSH_CUSTOM}/aliases.zsh
 
 ```sh
 brew install \
+    apfel \
     awscli \
     aws-iam-authenticator \
-    clocker \
+    docker-credential-helper-ecr \
     eksctl \
+    ets \
     fzf \
     git \
+    glab \
     helm \
-    java \
     jenv \
     jq \
+    kubectl-explore \
     maccy \
+    node \
+    openjdk \
     pluto \
+    pyenv \
     rbenv \
     readline \
+    ripgrep \
     stern \
     tfenv \
     thefuck \
+    uv \
     watch \
     wget \
     xz \
-    yq
+    yq \
+    zsh
 
-brew install --cask dbeaver-community itsycal macdown notunes keepassxc bruno
+brew install --cask bruno clocker dbeaver-community itsycal joplin keepassxc maccy markedit notunes
 brew install fluxcd/tap/flux
 ```
 
